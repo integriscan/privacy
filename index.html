@@ -10,13 +10,11 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans KR',sans
 .container{max-width:800px;margin:0 auto;padding:40px 24px}
 h1{font-size:28px;color:#00FF88;margin-bottom:8px}
 h2{font-size:20px;color:#00E5FF;margin:36px 0 14px;padding-bottom:8px;border-bottom:1px solid #1a2235}
-h3{font-size:16px;color:#fff;margin:20px 0 8px}
 p,li{font-size:14px;color:#9aa5b8;margin-bottom:10px}
 ul{padding-left:20px;margin-bottom:14px}
 li{margin-bottom:6px}
 .subtitle{color:#6b7a94;font-size:14px;margin-bottom:32px}
-.badge{display:inline-block;padding:4px 12px;border-radius:12px;font-size:12px;font-weight:600;margin-bottom:24px}
-.badge-green{background:rgba(0,255,136,0.1);color:#00FF88;border:1px solid rgba(0,255,136,0.2)}
+.badge{display:inline-block;padding:4px 12px;border-radius:12px;font-size:12px;font-weight:600;margin-bottom:24px;background:rgba(0,255,136,0.1);color:#00FF88;border:1px solid rgba(0,255,136,0.2)}
 .section{background:#0d1420;border:1px solid #1a2235;border-radius:16px;padding:24px;margin-bottom:20px}
 .highlight{color:#00FF88;font-weight:600}
 .warn{color:#ff9800}
@@ -25,28 +23,23 @@ th,td{text-align:left;padding:10px 14px;border:1px solid #1a2235;font-size:13px}
 th{background:#141c2e;color:#00E5FF;font-weight:600}
 td{color:#9aa5b8}
 .footer{text-align:center;margin-top:48px;padding-top:24px;border-top:1px solid #1a2235;color:#4a5568;font-size:12px}
-a{color:#00E5FF;text-decoration:none}
-a:hover{text-decoration:underline}
 .lang-switch{text-align:right;margin-bottom:20px}
-.lang-switch a{padding:6px 16px;border-radius:8px;border:1px solid #1a2235;margin-left:8px;font-size:13px}
-.lang-switch a.active{background:rgba(0,229,255,0.1);border-color:#00E5FF}
+.lang-btn{padding:6px 16px;border-radius:8px;border:1px solid #1a2235;margin-left:8px;font-size:13px;color:#00E5FF;cursor:pointer;display:inline-block;user-select:none}
+.lang-btn.active{background:rgba(0,229,255,0.1);border-color:#00E5FF}
 </style>
 </head>
 <body>
-
 <div class="container">
 
 <div class="lang-switch">
-  <a href="#ko" class="active" onclick="showLang('ko')">🇰🇷 한국어</a>
-  <a href="#en" onclick="showLang('en')">🇺🇸 English</a>
+  <span class="lang-btn active" id="btn-ko" onclick="document.getElementById('lang-ko').style.display='block';document.getElementById('lang-en').style.display='none';document.getElementById('btn-ko').className='lang-btn active';document.getElementById('btn-en').className='lang-btn'">🇰🇷 한국어</span>
+  <span class="lang-btn" id="btn-en" onclick="document.getElementById('lang-en').style.display='block';document.getElementById('lang-ko').style.display='none';document.getElementById('btn-en').className='lang-btn active';document.getElementById('btn-ko').className='lang-btn'">🇺🇸 English</span>
 </div>
 
-<!-- 한국어 -->
 <div id="lang-ko">
-
 <h1>🛡️ Integri-Scan 개인정보 처리방침</h1>
 <p class="subtitle">시행일: 2026년 2월 25일 | 최종 수정: 2026년 2월 25일</p>
-<span class="badge badge-green">v1.0</span>
+<span class="badge">v1.0</span>
 
 <div class="section">
 <h2>1. 개인정보의 수집 및 이용 목적</h2>
@@ -136,15 +129,12 @@ a:hover{text-decoration:underline}
 <h2>9. 개인정보 처리방침 변경</h2>
 <p>이 개인정보 처리방침은 관련 법령 및 서비스 변경 사항을 반영하여 수정될 수 있으며, 변경 시 앱 내 공지 또는 이 페이지를 통해 안내합니다.</p>
 </div>
-
 </div>
 
-<!-- English -->
 <div id="lang-en" style="display:none">
-
 <h1>🛡️ Integri-Scan Privacy Policy</h1>
 <p class="subtitle">Effective: February 25, 2026 | Last Updated: February 25, 2026</p>
-<span class="badge badge-green">v1.0</span>
+<span class="badge">v1.0</span>
 
 <div class="section">
 <h2>1. Purpose of Data Collection</h2>
@@ -233,7 +223,6 @@ a:hover{text-decoration:underline}
 <h2>9. Changes to This Policy</h2>
 <p>This privacy policy may be updated to reflect changes in laws or service updates. Changes will be announced through the app or this page.</p>
 </div>
-
 </div>
 
 <div class="footer">
@@ -242,5 +231,5 @@ a:hover{text-decoration:underline}
 </div>
 
 </div>
-
-<scr
+</body>
+</html>

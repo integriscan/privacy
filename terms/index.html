@@ -1,530 +1,190 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Integri-Scan 서비스 이용약관 | Terms of Service</title>
+    <title>Integri-Scan Terms of Service</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap');
-
-        :root {
-            --bg: #0a0e17;
-            --surface: #111827;
-            --surface2: #1a2235;
-            --border: #2a3548;
-            --text: #e2e8f0;
-            --text-dim: #94a3b8;
-            --accent: #38bdf8;
-            --accent2: #818cf8;
-            --accent-glow: rgba(56, 189, 248, 0.15);
-            --warning: #f59e0b;
-            --danger: #ef4444;
-        }
-
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
         body {
-            font-family: 'Noto Sans KR', 'IBM Plex Sans', sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.8;
-            min-height: 100vh;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0A0E17;
+            color: #E2E8F0;
+            line-height: 1.7;
+            padding: 20px;
         }
-
-        .header {
-            background: linear-gradient(135deg, var(--surface) 0%, var(--surface2) 100%);
-            border-bottom: 1px solid var(--border);
-            padding: 2rem 1.5rem;
-            text-align: center;
-        }
-
-        .header h1 {
-            font-size: 1.8rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, var(--accent), var(--accent2));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 0.5rem;
-        }
-
-        .header .meta {
-            font-size: 0.85rem;
-            color: var(--text-dim);
-        }
-
-        .lang-switch {
-            display: flex;
-            justify-content: center;
-            gap: 0.75rem;
-            margin-top: 1rem;
-        }
-
-        .lang-btn {
-            padding: 0.4rem 1rem;
-            border-radius: 20px;
-            border: 1px solid var(--border);
-            background: transparent;
-            color: var(--text-dim);
-            cursor: pointer;
-            font-size: 0.85rem;
-            transition: all 0.2s;
-        }
-
-        .lang-btn.active {
-            background: var(--accent);
-            color: var(--bg);
-            border-color: var(--accent);
-            font-weight: 500;
-        }
-
         .container {
-            max-width: 820px;
+            max-width: 800px;
             margin: 0 auto;
-            padding: 2rem 1.5rem 4rem;
+            padding: 40px 20px;
         }
-
-        .nav-links {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
+        h1 {
+            color: #38BDF8;
+            font-size: 28px;
+            margin-bottom: 8px;
         }
-
-        .nav-links a {
-            color: var(--accent);
-            text-decoration: none;
-            font-size: 0.9rem;
-            padding: 0.4rem 0.8rem;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            transition: all 0.2s;
-        }
-
-        .nav-links a:hover {
-            background: var(--accent-glow);
-            border-color: var(--accent);
-        }
-
-        .nav-links a.current {
-            background: var(--accent);
-            color: var(--bg);
-            border-color: var(--accent);
-            font-weight: 500;
-        }
-
-        section { margin-bottom: 2.5rem; }
-
         h2 {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--accent);
-            margin-bottom: 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 1px solid var(--border);
+            color: #38BDF8;
+            font-size: 20px;
+            margin-top: 32px;
+            margin-bottom: 12px;
+            border-bottom: 1px solid #1E293B;
+            padding-bottom: 8px;
         }
-
-        h3 {
-            font-size: 1.05rem;
-            font-weight: 600;
-            color: var(--text);
-            margin: 1.2rem 0 0.6rem;
-        }
-
         p {
-            margin-bottom: 0.8rem;
-            font-size: 0.95rem;
+            margin-bottom: 12px;
+            color: #CBD5E1;
         }
-
-        ul, ol {
-            margin: 0.5rem 0 1rem 1.5rem;
-            font-size: 0.95rem;
+        .meta {
+            color: #64748B;
+            font-size: 14px;
+            margin-bottom: 24px;
         }
-
-        li { margin-bottom: 0.4rem; }
-
-        .alert {
-            padding: 1rem 1.25rem;
-            border-radius: 10px;
-            margin: 1rem 0;
-            font-size: 0.9rem;
+        ul {
+            margin: 8px 0 16px 24px;
+            color: #CBD5E1;
         }
-
-        .alert-warning {
-            background: rgba(245, 158, 11, 0.1);
-            border: 1px solid rgba(245, 158, 11, 0.3);
-            color: var(--warning);
+        li { margin-bottom: 6px; }
+        a { color: #38BDF8; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .footer {
+            margin-top: 48px;
+            padding-top: 24px;
+            border-top: 1px solid #1E293B;
+            text-align: center;
+            color: #64748B;
+            font-size: 13px;
         }
-
-        .alert-danger {
-            background: rgba(239, 68, 68, 0.1);
-            border: 1px solid rgba(239, 68, 68, 0.3);
-            color: var(--danger);
+        .notice {
+            background: rgba(56, 189, 248, 0.08);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            border-radius: 12px;
+            padding: 14px 16px;
+            margin: 16px 0;
+            font-size: 14px;
         }
-
-        .alert-info {
-            background: var(--accent-glow);
-            border: 1px solid rgba(56, 189, 248, 0.3);
-            color: var(--accent);
-        }
-
         table {
             width: 100%;
             border-collapse: collapse;
-            margin: 1rem 0;
-            font-size: 0.9rem;
+            margin: 12px 0;
         }
-
         th, td {
-            padding: 0.75rem;
+            border: 1px solid #1E293B;
+            padding: 10px 12px;
             text-align: left;
-            border: 1px solid var(--border);
+            font-size: 14px;
         }
-
         th {
-            background: var(--surface2);
-            color: var(--accent);
-            font-weight: 600;
-        }
-
-        td { background: var(--surface); }
-
-        .footer {
-            text-align: center;
-            padding: 2rem;
-            color: var(--text-dim);
-            font-size: 0.85rem;
-            border-top: 1px solid var(--border);
-        }
-
-        .hidden { display: none; }
-
-        @media (max-width: 600px) {
-            .header h1 { font-size: 1.4rem; }
-            .container { padding: 1.5rem 1rem 3rem; }
-            table { font-size: 0.8rem; }
-            th, td { padding: 0.5rem; }
+            background: #111827;
+            color: #38BDF8;
         }
     </style>
 </head>
 <body>
+    <div class="container">
+        <h1>🛡️ Integri-Scan Terms of Service</h1>
+        <p class="meta">Effective: March 11, 2026 | Last Updated: March 11, 2026 | v2.0</p>
 
-<div class="header">
-    <h1>📋 Integri-Scan 서비스 이용약관</h1>
-    <div class="meta" id="meta-ko">시행일: 2026년 3월 2일 | v1.0</div>
-    <div class="meta hidden" id="meta-en">Effective: March 2, 2026 | v1.0</div>
-    <div class="lang-switch">
-        <button class="lang-btn active" onclick="switchLang('ko')">🇰🇷 한국어</button>
-        <button class="lang-btn" onclick="switchLang('en')">🇺🇸 English</button>
+        <div class="notice">
+            By using Integri-Scan, you agree to these Terms of Service. Please read them carefully before using the app.
+        </div>
+
+        <h2>1. Service Overview</h2>
+        <p>Integri-Scan ("the App") is an AI-powered deepfake and AI-generated image detection service. The App analyzes uploaded images using a multi-model AI ensemble to determine whether they are authentic or artificially generated.</p>
+
+        <h2>2. Eligibility</h2>
+        <p>You must be at least 13 years of age to use this App. By using the App, you represent that you meet this age requirement. The App does not require account registration — no name, email, or personal identification information is collected.</p>
+
+        <h2>3. Service Description</h2>
+        <p>The App provides:</p>
+        <ul>
+            <li>AI image analysis (deepfake detection, AI-generated image detection)</li>
+            <li>XAI heatmap visualization of suspicious regions</li>
+            <li>Natural ✓ certification for verified real images</li>
+            <li>Frequency anomaly analysis</li>
+            <li>False positive reporting</li>
+        </ul>
+
+        <h2>4. Usage Limits</h2>
+        <table>
+            <tr><th>Plan</th><th>Daily Scans</th><th>Ads</th></tr>
+            <tr><td>Free</td><td>1 free + up to 3 via rewarded ads</td><td>Banner + Rewarded</td></tr>
+            <tr><td>Premium</td><td>Unlimited</td><td>None</td></tr>
+        </table>
+
+        <h2>5. Subscription Terms</h2>
+        <p>Premium subscriptions are available as auto-renewable plans:</p>
+        <table>
+            <tr><th>Plan</th><th>Price (USD)</th><th>Billing Cycle</th></tr>
+            <tr><td>Weekly</td><td>$1.99</td><td>Every 1 week</td></tr>
+            <tr><td>Monthly</td><td>$4.99</td><td>Every 1 month</td></tr>
+            <tr><td>Yearly</td><td>$29.99</td><td>Every 1 year</td></tr>
+        </table>
+        <ul>
+            <li>Payment is charged to your Apple ID account at confirmation of purchase.</li>
+            <li>Subscriptions automatically renew unless turned off at least 24 hours before the end of the current period.</li>
+            <li>Manage and cancel subscriptions in Settings > Apple ID > Subscriptions.</li>
+            <li>Prices may vary by region. Local currency equivalents are determined by Apple.</li>
+        </ul>
+
+        <h2>6. AI Analysis Disclaimer</h2>
+        <p>This is the most important section of these terms:</p>
+        <ul>
+            <li>AI analysis results are provided for <strong>reference purposes only</strong> and have <strong>no legal effect</strong>.</li>
+            <li>We do not guarantee the accuracy, completeness, or reliability of any analysis result.</li>
+            <li>False positives (real images flagged as fake) and false negatives (fake images flagged as real) may occur.</li>
+            <li>Analysis results <strong>cannot be used</strong> as legal evidence, investigation materials, or court documents.</li>
+            <li>The Natural ✓ certification mark does not legally guarantee the authenticity of any image.</li>
+            <li>For critical decisions, always consult qualified professionals.</li>
+        </ul>
+
+        <h2>7. User Responsibilities</h2>
+        <p>You agree not to:</p>
+        <ul>
+            <li>Use the App for any unlawful purpose</li>
+            <li>Upload illegal content or content that violates the rights of others</li>
+            <li>Attempt to reverse engineer, decompile, or modify the App</li>
+            <li>Circumvent usage limits, rate limits, or security measures</li>
+            <li>Use analysis results for defamation, harassment, or blackmail</li>
+            <li>Misrepresent analysis results as official forensic evidence</li>
+        </ul>
+
+        <h2>8. Intellectual Property</h2>
+        <p>All intellectual property rights in the App, including AI models, algorithms, UI design, and content, belong to Integri-Scan and its licensors. You may not copy, modify, distribute, or create derivative works based on the App.</p>
+
+        <h2>9. Data Collection</h2>
+        <p>Images uploaded for analysis are transmitted to our servers for processing. With your optional consent, images may be stored to improve AI model performance. See our <a href="https://integriscan.github.io/privacy/">Privacy Policy</a> for full details on data handling.</p>
+
+        <h2>10. Limitation of Liability</h2>
+        <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW, INTEGRI-SCAN AND ITS DEVELOPERS SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING FROM YOUR USE OF THE APP, INCLUDING BUT NOT LIMITED TO DAMAGES RESULTING FROM RELIANCE ON ANALYSIS RESULTS.</p>
+
+        <h2>11. Service Availability</h2>
+        <p>We strive to maintain service availability but do not guarantee uninterrupted access. The service may be temporarily unavailable due to server maintenance, updates, or circumstances beyond our control. We reserve the right to modify, suspend, or discontinue the service at any time.</p>
+
+        <h2>12. Termination</h2>
+        <p>We may terminate or suspend your access to the App at any time if you violate these Terms. Upon termination, your right to use the App ceases immediately.</p>
+
+        <h2>13. Changes to These Terms</h2>
+        <p>We may update these Terms at any time. Changes will be posted on this page with an updated effective date. Continued use of the App constitutes acceptance of the updated Terms.</p>
+
+        <h2>14. Contact Information</h2>
+        <table>
+            <tr><th>Item</th><th>Details</th></tr>
+            <tr><td>Developer</td><td>Integri-Scan (Dongkyu Kim)</td></tr>
+            <tr><td>Email</td><td><a href="mailto:seocpryrhk24@naver.com">seocpryrhk24@naver.com</a></td></tr>
+        </table>
+
+        <h2>15. Governing Law</h2>
+        <p>These Terms shall be governed by and construed in accordance with the laws of the Republic of Korea.</p>
+
+        <div class="footer">
+            <p>© 2026 Integri-Scan. All rights reserved.</p>
+            <p>🛡️ Protecting truth in the age of deepfakes.</p>
+            <p style="margin-top: 12px;">
+                <a href="https://integriscan.github.io/privacy/">Privacy Policy</a> |
+                <a href="https://integriscan.github.io/eula/">EULA</a>
+            </p>
+        </div>
     </div>
-</div>
-
-<div class="container">
-    <div class="nav-links">
-        <a href="/privacy/">개인정보처리방침</a>
-        <a href="/terms/" class="current">이용약관</a>
-    </div>
-
-    <!-- ========== 한국어 ========== -->
-    <div id="content-ko">
-
-        <section>
-            <h2>제1조 (목적)</h2>
-            <p>이 약관은 Integri-Scan(이하 "앱")이 제공하는 AI 기반 딥페이크 탐지 서비스(이하 "서비스")의 이용 조건 및 절차, 앱과 이용자 간의 권리·의무 및 기타 필요한 사항을 규정함을 목적으로 합니다.</p>
-        </section>
-
-        <section>
-            <h2>제2조 (정의)</h2>
-            <ol>
-                <li><strong>"서비스"</strong>란 앱이 제공하는 AI 이미지 분석, 딥페이크 탐지, 신뢰도 분석 등 일체의 기능을 말합니다.</li>
-                <li><strong>"이용자"</strong>란 이 약관에 따라 서비스를 이용하는 자를 말합니다.</li>
-                <li><strong>"분석 결과"</strong>란 이용자가 업로드한 이미지에 대해 AI 모델이 산출한 판정 결과(REAL / SUSPICIOUS / DEEPFAKE) 및 관련 점수를 말합니다.</li>
-                <li><strong>"프리미엄 서비스"</strong>란 유료 구독을 통해 이용할 수 있는 추가 기능(무제한 스캔, 우선 분석 등)을 말합니다.</li>
-            </ol>
-        </section>
-
-        <section>
-            <h2>제3조 (약관의 효력 및 변경)</h2>
-            <ol>
-                <li>이 약관은 앱 내에 게시하거나 기타 방법으로 이용자에게 공지함으로써 효력을 발생합니다.</li>
-                <li>앱은 관련 법령을 위반하지 않는 범위 내에서 이 약관을 변경할 수 있으며, 변경된 약관은 적용일자 7일 전부터 앱 내 공지 또는 웹사이트를 통해 안내합니다.</li>
-                <li>이용자에게 불리한 약관 변경의 경우 적용일자 30일 전부터 공지하며, 이용자가 변경된 약관에 동의하지 않는 경우 서비스 이용을 중단할 수 있습니다.</li>
-            </ol>
-        </section>
-
-        <section>
-            <h2>제4조 (서비스의 내용)</h2>
-            <p>앱이 제공하는 서비스는 다음과 같습니다.</p>
-            <ol>
-                <li>이미지 업로드를 통한 AI 딥페이크 탐지 분석</li>
-                <li>분석 결과 및 신뢰도 점수 제공</li>
-                <li>분석 히스토리 관리</li>
-                <li>프리미엄 구독 서비스</li>
-            </ol>
-        </section>
-
-        <section>
-            <h2>제5조 (서비스 이용)</h2>
-            <ol>
-                <li>서비스는 앱을 설치한 후 별도의 회원가입 없이 이용할 수 있습니다.</li>
-                <li>무료 이용자는 일일 분석 횟수가 제한될 수 있습니다.</li>
-                <li>프리미엄 구독자는 추가 기능 및 무제한 분석을 이용할 수 있습니다.</li>
-                <li>서비스 이용 시 이 약관 및 개인정보 처리방침에 동의한 것으로 간주합니다.</li>
-            </ol>
-        </section>
-
-        <section>
-            <h2>제6조 (AI 분석 결과의 한계 및 면책)</h2>
-            <div class="alert alert-danger">
-                🚨 <strong>중요:</strong> AI 분석 결과는 법적 효력이 없는 참고 자료입니다.
-            </div>
-            <ol>
-                <li>분석 결과는 AI 모델의 확률적 추정에 기반한 <strong>참고 자료</strong>이며, 이미지의 진위를 법적으로 보증하지 않습니다.</li>
-                <li>분석 결과의 정확성, 완전성, 신뢰성을 보증하지 않으며, AI 기술의 특성상 오탐(false positive) 및 미탐(false negative)이 발생할 수 있습니다.</li>
-                <li>분석 결과를 <strong>법적 증거, 수사 자료, 재판 자료, 인사 결정 근거</strong> 등으로 사용할 수 없습니다.</li>
-                <li>중요한 판단이 필요한 경우 반드시 전문가 검증을 병행하여야 합니다.</li>
-                <li>이용자가 분석 결과를 근거로 행한 판단 및 행동에 대해 앱 개발자는 어떠한 직접적·간접적 책임도 지지 않습니다.</li>
-                <li>Natural ✓ 인증마크는 AI 분석 기준으로 부여되며, 이미지의 원본성을 법적으로 증명하지 않습니다.</li>
-            </ol>
-        </section>
-
-        <section>
-            <h2>제7조 (이용자의 의무)</h2>
-            <p>이용자는 서비스 이용 시 다음 행위를 하여서는 안 됩니다.</p>
-            <ol>
-                <li>타인의 개인정보, 초상권, 저작권을 침해하는 이미지를 업로드하는 행위</li>
-                <li>불법적인 목적으로 서비스를 이용하는 행위</li>
-                <li>서비스의 정상적인 운영을 방해하는 행위 (비정상적 대량 요청, 해킹 시도 등)</li>
-                <li>서비스를 역설계(reverse engineering)하거나 AI 모델을 추출하려는 행위</li>
-                <li>분석 결과를 허위 또는 오해를 유발하는 방식으로 유포하는 행위</li>
-                <li>아동·청소년 성착취물, 불법 촬영물 등 불법 콘텐츠를 업로드하는 행위</li>
-                <li>분석 결과를 타인에 대한 명예훼손, 모욕, 협박의 수단으로 사용하는 행위</li>
-            </ol>
-        </section>
-
-        <section>
-            <h2>제8조 (유료 서비스 및 결제)</h2>
-            <ol>
-                <li>프리미엄 서비스는 Apple App Store 또는 Google Play Store의 인앱 결제를 통해 구매할 수 있습니다.</li>
-                <li>결제, 환불, 구독 해지 등은 각 스토어의 정책에 따릅니다.</li>
-                <li>구독 기간 중 서비스 내용이 변경되는 경우, 변경 사항은 다음 결제 주기부터 적용됩니다.</li>
-            </ol>
-            <table>
-                <tr><th>플랜</th><th>가격</th><th>혜택</th></tr>
-                <tr><td>주간</td><td>₩2,900/주</td><td>무제한 스캔, 우선 분석</td></tr>
-                <tr><td>월간</td><td>₩5,900/월</td><td>무제한 스캔, 우선 분석, 기록 무제한</td></tr>
-                <tr><td>연간</td><td>₩49,900/년</td><td>무제한 스캔, 우선 분석, 기록 무제한, 우선 지원</td></tr>
-            </table>
-            <p>※ 가격은 변경될 수 있으며, 변경 시 사전에 안내합니다.</p>
-        </section>
-
-        <section>
-            <h2>제9조 (서비스 중단 및 제한)</h2>
-            <ol>
-                <li>앱은 시스템 점검, 서버 장애, 천재지변 등 불가피한 사유로 서비스를 일시 중단할 수 있습니다.</li>
-                <li>이용자가 제7조를 위반한 경우, 서비스 이용을 제한하거나 차단할 수 있습니다.</li>
-                <li>서비스 중단 또는 제한에 따른 손해에 대해 앱 개발자의 고의 또는 중대한 과실이 없는 한 책임을 지지 않습니다.</li>
-            </ol>
-        </section>
-
-        <section>
-            <h2>제10조 (지적재산권)</h2>
-            <ol>
-                <li>서비스에 사용된 AI 모델, 소프트웨어, 디자인, 콘텐츠 등의 지적재산권은 앱 개발자에게 귀속됩니다.</li>
-                <li>이용자가 업로드한 이미지에 대한 저작권은 원저작자에게 있으며, 앱은 서비스 제공 목적 범위 내에서만 해당 이미지를 처리합니다.</li>
-            </ol>
-        </section>
-
-        <section>
-            <h2>제11조 (손해배상)</h2>
-            <ol>
-                <li>앱은 무료 서비스에 대해 별도의 손해배상 책임을 지지 않습니다.</li>
-                <li>유료 서비스 이용자에 대해서는 앱 개발자의 고의 또는 중대한 과실로 인한 손해에 한하여 배상합니다.</li>
-                <li>배상 범위는 해당 이용자가 납부한 서비스 이용 요금을 한도로 합니다.</li>
-            </ol>
-        </section>
-
-        <section>
-            <h2>제12조 (분쟁해결)</h2>
-            <ol>
-                <li>이 약관에 관한 분쟁은 대한민국 법률을 준거법으로 합니다.</li>
-                <li>서비스 이용과 관련하여 발생한 분쟁에 대해서는 이용자의 주소지를 관할하는 법원을 합의 관할로 합니다.</li>
-            </ol>
-        </section>
-
-        <section>
-            <h2>제13조 (기타)</h2>
-            <ol>
-                <li>이 약관에서 정하지 않은 사항은 관련 법령 및 상관례에 따릅니다.</li>
-                <li>이 약관의 일부 조항이 무효이더라도 나머지 조항의 효력에는 영향을 미치지 않습니다.</li>
-            </ol>
-        </section>
-
-        <section>
-            <h2>부칙</h2>
-            <p>이 약관은 2026년 3월 2일부터 시행합니다.</p>
-        </section>
-
-    </div>
-
-    <!-- ========== English ========== -->
-    <div id="content-en" class="hidden">
-
-        <section>
-            <h2>Article 1. Purpose</h2>
-            <p>These Terms of Service ("Terms") govern the use of the AI-based deepfake detection service ("Service") provided by Integri-Scan ("the App"), establishing the rights, obligations, and responsibilities between the App and its users.</p>
-        </section>
-
-        <section>
-            <h2>Article 2. Definitions</h2>
-            <ol>
-                <li><strong>"Service"</strong> refers to all features provided by the App, including AI image analysis, deepfake detection, and confidence scoring.</li>
-                <li><strong>"User"</strong> refers to any person who uses the Service under these Terms.</li>
-                <li><strong>"Analysis Result"</strong> refers to the AI model's determination (REAL / SUSPICIOUS / DEEPFAKE) and associated scores for uploaded images.</li>
-                <li><strong>"Premium Service"</strong> refers to additional features available through paid subscription (unlimited scans, priority analysis, etc.).</li>
-            </ol>
-        </section>
-
-        <section>
-            <h2>Article 3. Effectiveness and Changes</h2>
-            <ol>
-                <li>These Terms become effective when posted within the App or communicated to users.</li>
-                <li>The App may amend these Terms within the bounds of applicable law, with at least 7 days' notice before the effective date.</li>
-                <li>For changes unfavorable to users, at least 30 days' notice will be given. Users who disagree may discontinue use.</li>
-            </ol>
-        </section>
-
-        <section>
-            <h2>Article 4. Service Description</h2>
-            <ol>
-                <li>AI deepfake detection analysis through image upload</li>
-                <li>Provision of analysis results and confidence scores</li>
-                <li>Analysis history management</li>
-                <li>Premium subscription services</li>
-            </ol>
-        </section>
-
-        <section>
-            <h2>Article 5. Service Usage</h2>
-            <ol>
-                <li>The Service can be used after installing the App without separate registration.</li>
-                <li>Free users may be subject to daily analysis limits.</li>
-                <li>Premium subscribers have access to additional features and unlimited analysis.</li>
-                <li>Use of the Service constitutes acceptance of these Terms and the Privacy Policy.</li>
-            </ol>
-        </section>
-
-        <section>
-            <h2>Article 6. Limitations of AI Analysis & Disclaimer</h2>
-            <div class="alert alert-danger">
-                🚨 <strong>Important:</strong> AI analysis results are reference materials with no legal effect.
-            </div>
-            <ol>
-                <li>Results are <strong>probabilistic estimates</strong> based on AI models and do not legally verify image authenticity.</li>
-                <li>We do not guarantee accuracy, completeness, or reliability. False positives and false negatives may occur.</li>
-                <li>Results <strong>cannot be used as legal evidence, investigation materials, court documents, or employment decisions.</strong></li>
-                <li>For critical decisions, professional verification must be conducted.</li>
-                <li>The developer assumes no direct or indirect liability for judgments or actions based on analysis results.</li>
-                <li>The Natural ✓ mark is AI-based and does not legally certify image authenticity.</li>
-            </ol>
-        </section>
-
-        <section>
-            <h2>Article 7. User Obligations</h2>
-            <p>Users must not:</p>
-            <ol>
-                <li>Upload images that infringe on others' privacy, portrait rights, or copyright</li>
-                <li>Use the Service for illegal purposes</li>
-                <li>Interfere with normal service operation (mass requests, hacking attempts, etc.)</li>
-                <li>Reverse engineer the Service or attempt to extract AI models</li>
-                <li>Distribute results in a false or misleading manner</li>
-                <li>Upload illegal content including child exploitation material or non-consensual intimate imagery</li>
-                <li>Use results as a means of defamation, insult, or threats against others</li>
-            </ol>
-        </section>
-
-        <section>
-            <h2>Article 8. Paid Services & Payment</h2>
-            <ol>
-                <li>Premium Services may be purchased through Apple App Store or Google Play Store in-app purchases.</li>
-                <li>Payment, refunds, and cancellation are governed by respective store policies.</li>
-                <li>Changes to service content during a subscription period take effect from the next billing cycle.</li>
-            </ol>
-            <table>
-                <tr><th>Plan</th><th>Price</th><th>Benefits</th></tr>
-                <tr><td>Weekly</td><td>₩2,900/week</td><td>Unlimited scans, priority analysis</td></tr>
-                <tr><td>Monthly</td><td>₩5,900/month</td><td>Unlimited scans, priority analysis, unlimited history</td></tr>
-                <tr><td>Yearly</td><td>₩49,900/year</td><td>Unlimited scans, priority analysis, unlimited history, priority support</td></tr>
-            </table>
-            <p>※ Prices are subject to change with prior notice.</p>
-        </section>
-
-        <section>
-            <h2>Article 9. Service Suspension & Restrictions</h2>
-            <ol>
-                <li>The Service may be temporarily suspended due to system maintenance, server issues, or force majeure.</li>
-                <li>Users violating Article 7 may have their access restricted or blocked.</li>
-                <li>The developer is not liable for damages from service suspension unless caused by willful misconduct or gross negligence.</li>
-            </ol>
-        </section>
-
-        <section>
-            <h2>Article 10. Intellectual Property</h2>
-            <ol>
-                <li>All intellectual property rights in the AI models, software, design, and content belong to the developer.</li>
-                <li>Copyright of uploaded images remains with the original owner; the App processes them only within the scope of service provision.</li>
-            </ol>
-        </section>
-
-        <section>
-            <h2>Article 11. Liability</h2>
-            <ol>
-                <li>The App bears no liability for damages related to free services.</li>
-                <li>For paid services, liability is limited to damages caused by willful misconduct or gross negligence.</li>
-                <li>Maximum liability is limited to the service fees paid by the user.</li>
-            </ol>
-        </section>
-
-        <section>
-            <h2>Article 12. Dispute Resolution</h2>
-            <ol>
-                <li>These Terms are governed by the laws of the Republic of Korea.</li>
-                <li>Disputes shall be resolved by the court having jurisdiction over the user's place of residence.</li>
-            </ol>
-        </section>
-
-        <section>
-            <h2>Article 13. Miscellaneous</h2>
-            <ol>
-                <li>Matters not specified herein shall be governed by applicable laws and customs.</li>
-                <li>If any provision is found invalid, the remaining provisions remain in full effect.</li>
-            </ol>
-        </section>
-
-        <section>
-            <h2>Supplementary Provisions</h2>
-            <p>These Terms take effect on March 2, 2026.</p>
-        </section>
-
-    </div>
-</div>
-
-<div class="footer">
-    © 2026 Integri-Scan. All rights reserved.<br>
-    🛡️ Protecting truth in the age of deepfakes.
-</div>
-
-<script>
-    function switchLang(lang) {
-        document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-        event.target.classList.add('active');
-
-        document.getElementById('content-ko').classList.toggle('hidden', lang !== 'ko');
-        document.getElementById('content-en').classList.toggle('hidden', lang !== 'en');
-        document.getElementById('meta-ko').classList.toggle('hidden', lang !== 'ko');
-        document.getElementById('meta-en').classList.toggle('hidden', lang !== 'en');
-    }
-</script>
-
 </body>
 </html>
